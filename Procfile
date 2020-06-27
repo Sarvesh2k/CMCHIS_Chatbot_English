@@ -1,0 +1,1 @@
+web gunicorn gui_chatbot:app
