@@ -15,7 +15,6 @@ intents = json.loads(open('intents.json').read())
 words = pickle.load(open('words.pkl', 'rb'))
 classes = pickle.load(open('classes.pkl', 'rb'))
 
-str = unicode(str, errors='ignore')
 
 def clean_up_sentence(sentence):
     # tokenize the pattern - splitting words into array
