@@ -1,4 +1,4 @@
-# CMCHS_Chatbot
+# CMCHIS Chatbot
 
 A simple Retrieval Based Chatbot that answers questions regarding the Tamil Nadu's Chief Minister's Health Insurance Scheme.
 The chatbot is built using Keras along with Tensorflow as Backend. 
