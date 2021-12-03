@@ -70,7 +70,7 @@ def getResponse(ints, intents_json):
 
 # Telegram Messaging Sandbox
 
-BOT_URL = 'https://api.telegram.org/bot1278289981:AAFVVidHTaUY1Vy764247BMFm2O1uGS2UTU/' # <--- add your telegram token here
+BOT_URL = '' # <--- add your telegram token here
 def get_chat_id(data):  
     """
     Method to extract chat id from telegram request.
