@@ -1,33 +1,38 @@
 {"intents": [
-        {"tag": "salutation",
+        {"tag": "Hello",
          "patterns": ["Hi there", "Is anyone there?","Hey","Hola", "Hello", "Good day", "Hi"],
          "responses": ["Hello!", "Good to see you again", "Hi there, how can I help?", "Hola!", "Hey There!", "Good day"],
-         "context": [""]
+         "context": ["Greeting"]
         },
-		{"tag": "greeting",
-         "patterns": ["How are you?", "How do you do?","Are you fine?","Good to see you", "Nice to meet you", "Good to meet you"],
+		{"tag": "How_are_you",
+         "patterns": ["How are you?", "How do you do?","Are you fine?","Good to see you", "Nice to meet you", "Good to meet you", "How are ya", "How are you doing?"],
          "responses": ["I'm good, how about you?", "I'm good, thank you for asking", "I'm great. How do you do?", "I'm fine, how about you", "I'm doing great"],
-         "context": [""]
+         "context": ["Greeting"]
         },
-        {"tag": "goodbye",
+        {"tag": "bye",
          "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time", "See you", "later!", "I have to go now", "it was nice talking to you, bye", "I need to leave"],
          "responses": ["See you!", "Have a nice day", "Bye! Come back again soon.", "Good Bye!"],
-         "context": [""]
+         "context": ["Greeting"]
         },
-		{"tag": "greeting_response",
+		{"tag": "I_am_fine",
          "patterns": ["I'm doing great", "I'm fine", "I am fine", "I am alright", "I am doing fine", "I'm great", "I'm good", "I am good", "good", "Amazing", "Fantastic"],
-         "responses": ["Great!", "Good to know", "Nice", "Cool", "Great to hear", "Good to hear"],
-         "context": [""]
+         "responses": ["Great!", "Good to know", "Great to hear", "Good to hear"],
+         "context": ["Greeting"]
         },
 		{"tag": "one_word",
          "patterns": ["ok", "fine", "cool", "alright", "right", "great", "Okay", "nice"],
-         "responses": ["Anything else you are interested in?", "Want to have a look at anything else?", "anything else you fancy knowing?"],
-         "context": [""]
+         "responses": ["Anything particular you are interested in?", "Want to have a look at anything in particular?", "anything you would like to know?"],
+         "context": ["Scheme_Details"]
         },
 		{"tag": "yes_response",
          "patterns": ["yes", "yea", "yeah", "yus", "ya"],
-         "responses": ["Cool, ask me anything about the Chief Minister's Comprehensive Health Insurance Scheme (CMCHS) offered by the Government of Tamil Nadu", "Ask me anything about CMCHS"],
-         "context": [""]
+         "responses": ["Alright, ask me anything about the Chief Minister's Comprehensive Health Insurance Scheme (CMCHIS) offered by the Government of Tamil Nadu", "Ask me anything about CMCHIS", "I know about CMCHIS"],
+         "context": ["Scheme_Details"]
+        },
+		{"tag": "no_response",
+         "patterns": ["no", "nope", "nah", "nothing", "nothing more"],
+         "responses": ["Ok, have a good day.", "Good Day then", "Alright, see you next time."],
+         "context": ["Scheme_Details"]
         },
         {"tag": "thanks",
          "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me", "good", "That's amazing!", "fantastic"],
@@ -35,13 +40,13 @@
          "context": [""]
         },
         {"tag": "blabber",
-         "patterns": ["wassup?", "sup", "tell me bro", "that's lit"],
+         "patterns": ["wassup?", "sup", "tell me bro", "that's lit", "12232321"],
          "responses": ["Sorry, I can't understand you", "Couldn't catch what you are saying", "I'm sorry I didn't quite understand", "Could you say that again?", "Didn't get you"],
-         "context": [""]
+         "context": ["Quit"]
         },
 		{"tag": "identity",
          "patterns": ["who are you?", "what are you?", "Do I know you?"],
-         "responses": ["My name is Bob, your tech friend", "I'm Bob, your friendly neighbourhood Tech Specialist", "You can call me Bob, the Tech Friend"],
+         "responses": ["My name is Bob", "I'm Bob", "You can call me Bob."],
          "context": [""]
         },
         {"tag": "options",
@@ -49,8 +54,18 @@
          "responses": ["I can guide you through the Chief Minister's Comprehensive Health Insurance Scheme (CMCHS) offered by the Government of Tamil Nadu", "Ask me anything about the Chief Minister's Comprehensive Health Insurance Scheme offered by the Government of Tamil Nadu"],
          "context": [""]
         },
-        {"tag": "health_insurance",
+		{"tag": "year_of_launch",
+         "patterns": ["When was this scheme launched?", "When was CMCHIS started?", "When did it launch?", "When did it start?", "When did the scheme launch?"],
+         "responses": ["The CMCHIS scheme was launched in 2012 and in 2018 was integrated with the Central Government's Ayushman Bharat - Pradhan Mantri Jan Arogya Yojana", "This scheme was launched in 2012 and in 2018 was integrated with the Central Government's Ayushman Bharat - Pradhan Mantri Jan Arogya Yojana"],
+         "context": [""]
+        },
+        {"tag": "scheme_details",
          "patterns": ["What is this scheme about?", "Could you tell me something about this scheme", "What is this scheme?", "What is the Chief Minister's Comprehensive Health Insurance Scheme?", "What is CMCHS?", "What is this?" ],
+         "responses": ["It is a scheme launched by the Government of Tamil Nadu through United India Insurance Company Ltd., a Public Sector Insurance Company headquartered at Chennai.", "The Scheme provides quality health care to the eligible persons through empanelled Government and Private hospitals and to reduce the financial hardship to the enrolled families and move towards universal health coverage by effectively linking with public health system.", "The Scheme provides coverage for meeting all expenses relating to hospitalization of beneficiary as defined in the Scope of the Scheme."],
+         "context": [""]
+        },
+		{"tag": "full_form",
+         "patterns": ["What is the full form?", "what is the full form of CMCHIS?", "What is its full form?", "What is the full form of the scheme?", "full form of CMCHIS?"],
          "responses": ["It is a scheme launched by the Government of Tamil Nadu through United India Insurance Company Ltd., a Public Sector Insurance Company headquartered at Chennai.", "The Scheme provides quality health care to the eligible persons through empanelled Government and Private hospitals and to reduce the financial hardship to the enrolled families and move towards universal health coverage by effectively linking with public health system.", "The Scheme provides coverage for meeting all expenses relating to hospitalization of beneficiary as defined in the Scope of the Scheme."],
          "context": [""]
         },
@@ -62,22 +77,22 @@
         {"tag": "more_information",
          "patterns": ["Where can I get more information?", "Where do i contact for further information?", "How do i know more about this?", "how do i get more information?", "show me more", "I want to know more", "Can i get more details about this scheme?", "I want more info", "I need more info" ],
          "responses": ["You can ask me any number of questions you want and I will answer it for you. If you still need more help you can call 1800-425-3993", "You can call 1800-425-3993 for more help. Otherwise, you can ask me for more details."],
-         "context": ["search_blood_pressure_by_patient_id"]
+         "context": ["Helpline"]
         },
         {"tag": "eligibility_main",
-         "patterns": ["How do I know if I am eligible for this scheme?", "What is the eligibility criteria?", "how do I know if I can avail this scheme?", "What are the requirements to access this scheme?", "How to access this scheme?", "What is required?", "What do I need?", "How to know if I am eligible for this?", "How to Know if I am eligible?"],
+         "patterns": ["How do I know if I am eligible for this scheme?", "What is the eligibility criteria?", "how do I know if I can avail this scheme?", "What are the requirements to access this scheme?", "How to access this scheme?", "What is required?", "What do I need?", "How to know if I am eligible for this?", "How to Know if I am eligible?", "Can I apply?", "Could I apply?"],
          "responses": ["If you have family card and Income Certificate by the VAO/Revenue authorities along with the self declaration of the head of the concerned family, where “Family” includes the eligible member, and the members of his or her Family i.e. Legal Spouse, children and dependent parents of the eligible person, then you can apply."],
-         "context": [""]
+         "context": ["Eligibility"]
         },
 		{"tag": "eligibility_refugee_migrant",
          "patterns": ["What if I am a Sri Lankan refugee?", "Can Sri Lankans Apply?", "What if I am a refugee?", "Can I avail if i am a migrant?", "Can I avail if i am a refugee?", "What are the requirements for a refugee?", "What are the requirements for a refugee?", "What about refugees?", "What about Migrants?", "what about immigrants?", "I am a Sri Lankan", "What about Sri Lankans?"],
          "responses": ["Srilankan refugees in camps are also eligible without any Income limit. Migrants from other states can also join this CMCHS based on the request letter along with a list of Eligible member’s from labour department, provided they have resided for more than six months in the state as certified by suitable authority."],
-         "context": [""]
+         "context": ["Eligibility"]
         },
 		{"tag": "eligibility_orphan", 
          "patterns": ["What if I am an Orphan?", "Can I avail if i am an orphan?", "What are the requirements for an orphan?", "I am an Orphan, can I avail this scheme?", "what about orphans?"],
          "responses": ["Orphans residing in any registered/unregistered organization can be given a singlecard. This also includes the rescued girlchildren and any other person defined as orphan by the government."],
-         "context": [""]
+         "context": ["Eligibility"]
         },
 		{"tag": "package_rates", 
          "patterns": ["May I know the package rates?", "What are the package rates?", "Can i see package rates?", "What are the packages offered?", "What packages are provided?", "May I know the packages provided?", "May i see the packages?", "I want to see the package rates?", "What are package rates?", "What are the packages?"],
@@ -87,32 +102,37 @@
         {"tag": "apply_documents",
          "patterns": ["How to enroll?", "How to apply?", "how can i apply?", "Tell me how to apply", "Can you tell me how to apply?" ],
          "responses": ["Once you have found out you are eligible, have a look at this following link: https://www.cmchistn.com/howToEnrol.pdf", "Have a look at https://www.cmchistn.com/howToEnrol.pdf once you found out that you are eligible."],
-         "context": [""]
+         "context": ["Application"]
         },
         {"tag": "beneficiary_search",
          "patterns": ["I want to search for a Beneficiary", "Can I search for beneficiary", "How to search for beneficiary?", "I am already enrolled, I want to search for my details", "How to do memeber search?", "How to search for member?", "Want to search member"],
          "responses": ["Go to https://claim.cmchistn.com/Payer/PayerMembersearch.aspx to search for a beneficiary", "You can find it here https://claim.cmchistn.com/Payer/PayerMembersearch.aspx", "Have a look here https://claim.cmchistn.com/Payer/PayerMembersearch.aspx"],
-         "context": [""]
+         "context": ["Search_Beneficiary_Details"]
         },
         {"tag": "link_aadhar_with_urn",
          "patterns": ["How can I link Aadhar with URN?", "how to link aadhar with URN number?", "How to enroll aadhar with URN?", "I want to link Aadhar with URN", "I want to link aadhar with my URN number" ],
          "responses": ["Have a look at https://www.cmchistn.com/howToEnrolAdharURN.pdf to link your aadhar with URN. After reading the instructions, proceed to http://cmchisonline.cmchistn.com/", "The instructions can be found at https://www.cmchistn.com/howToEnrolAdharURN.pdf . Then, proceed to http://cmchisonline.cmchistn.com/"],
-         "context": [""]
+         "context": ["Application"]
         },
         {"tag": "member_id",
          "patterns": ["I want to find member ID", "How to find member ID?", "How do I find member ID?", "How can I find Member ID?", "I want to see member ID"],
          "responses": ["You can search for Member ID here http://app.eaglesoftware.in:8084/CMCHIS/showsearchbyurn.do?method=showSearchByUrn", "You can search for member ID via URN here http://app.eaglesoftware.in:8084/CMCHIS/showsearchbyurn.do?method=showSearchByUrn", "You need URN of the concerned person to find their ID. You can find it here http://app.eaglesoftware.in:8084/CMCHIS/showsearchbyurn.do?method=showSearchByUrn"],
-         "context": [""]
+         "context": ["Search_Beneficiary_Details"]
         },
 		{"tag": "help",
          "patterns": ["The link provided is not working", "The link you have provided is not working", "Link is not working..help", "Links are not working", "I want to contact officials"],
          "responses": ["For further queries, you can find contacts in this link https://www.cmchistn.com/contact.php", "If you have any problems in accessing the links, you can find contacts in this link https://www.cmchistn.com/contact.php", "If you faced any difficulty, contacts can be found here https://www.cmchistn.com/contact.php"],
-         "context": [""]
+         "context": ["Helpline"]
         },
         {"tag": "app",
          "patterns": ["Is there an app for this scheme?", "Is there an app?", "Is there an app version?", "Can I access this scheme in phone?", "Can I access in phone?", "How to get app?"],
          "responses": ["You can access the CMCHS scheme in your phone as well. Here is the link to the app on Playstore https://play.google.com/store/apps/details?id=com.remedinet.tnbeneficiary"],
-         "context": [""]
+         "context": ["Helpline"]
+        },
+		{"tag": "swearing",
+         "patterns": ["Stupid", "Idiot", "Nonsense", "You are useless", "you are dumb"],
+         "responses": ["Misbehaviour will not be tolerated, have a good day. You will not be able to access this service for another 24 Hours"],
+         "context": ["Quit"]
         }
    ]
 }
