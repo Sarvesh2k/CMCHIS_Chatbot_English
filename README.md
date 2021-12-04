@@ -21,6 +21,10 @@ A retrieval based chatbot using NLTK, Keras, Tensorflow (Keras requires Tensorfl
 
 In order to facilitate an in-depth understanding of how the code works and how to execute it, I have created a `Documentation.pdf` file that attempts to explain my exploration in this domain. Comments have also been provided in the codebase.
 
+## Demonstration Video (Click to Watch)
+
+[![CMCHIS Chatbot English](https://img.youtube.com/vi/TihtXnMT9E0/maxresdefault.jpg)](https://youtu.be/TihtXnMT9E0)
+
 ## Issues Faced during Development
 
 1.	Named Entity Recognition (NER).
